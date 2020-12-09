@@ -5,7 +5,9 @@ import { distinctUntilChanged, map } from "rxjs/operators";
 import { Product } from "./models/Product";
 import { ShippingType } from "./models/ShippingType";
 
-@Injectable({ providedIn: "root" })
+@Injectable({
+  providedIn: "root"
+})
 export class CartService {
   private items = new BehaviorSubject<Product[]>([]);
   items$ = this.items.asObservable().pipe(distinctUntilChanged());
