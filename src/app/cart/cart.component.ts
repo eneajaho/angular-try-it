@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { FormBuilder } from "@angular/forms";
 
 import { CartService } from "../cart.service";
+import { Product } from "../models/Product";
 
 @Component({
   selector: "app-cart",
@@ -9,7 +10,7 @@ import { CartService } from "../cart.service";
   styleUrls: ["./cart.component.css"]
 })
 export class CartComponent {
-  items = this.cartService.getItems();
+  items: Product[] = this.cartService.getItems();
 
   checkoutForm = this.formBuilder.group({
     name: "",
