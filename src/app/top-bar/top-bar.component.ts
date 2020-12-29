@@ -1,11 +1,17 @@
 import { Component } from "@angular/core";
+import { CartService } from "../cart.service";
 
 @Component({
   selector: "app-top-bar",
   templateUrl: "./top-bar.component.html",
   styleUrls: ["./top-bar.component.css"]
 })
-export class TopBarComponent {}
+export class TopBarComponent {
+  // this won't change
+  count = this.cart.getItems().length;
+
+  constructor(private cart: CartService) {}
+}
 
 /*
 Copyright Google LLC. All Rights Reserved.
