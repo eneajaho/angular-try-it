@@ -8,7 +8,9 @@ import { CartService } from "../cart.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShippingComponent {
-  shippingCosts$ = this.cartService.shippingPrices$;
+
+  shippingPrices$ = this.cartService.shippingPrices$;
 
   constructor(private cartService: CartService) {}
+  
 }
